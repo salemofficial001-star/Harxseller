@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Herx Web</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1b1b1b, #0a0a0a);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  width: 320px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transition: transform 0.1s ease;
+}
+
+.top {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #00ff6a;
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.info p {
+  margin: 5px 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 4px 8px;
+  font-size: 10px;
+  background: #6e6e6e;
+  border-radius: 8px;
+}
+
+.music {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+}
+
+.cover {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #e8ffe3, #525252);
+  border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+
+  <div class="top">
+    <img class="avatar" src="harx.webp">
+    <div class="info">
+      <h2>HarX</h2>
+      <p>@harx67</p>
+      <span class="badge">Nitro Supplier</span>
+      <span class="badge">Nitro Seller</span>
+    </div>
+  </div>
+  
+
+  <div class="music">
+    <div class="cover"></div>
+    <div>
+      <h4 style="margin:0;">Hern Store</h4>
+      <p style="margin:0;font-size:12px;opacity:0.7;"></p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const card = document.getElementById("card");
+
+document.addEventListener("mousemove", (e) => {
+  let x = (window.innerWidth / 2 - e.pageX) / 25;
+  let y = (window.innerHeight / 2 - e.pageY) / 25;
+  card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+});
+
+document.addEventListener("mouseleave", () => {
+  card.style.transform = "rotateY(0deg) rotateX(0deg)";
+});
+</script>
+
+</body>
+</html>
